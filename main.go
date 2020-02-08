@@ -20,7 +20,7 @@ func main() {
 
 func listnodes() ([]string, error) {
 	var nodes []string
-	kubeconfig := flag.String("kubeconfig", os.Getenv("HOME")+"/.kube/config", "path to the kubeconfig file to use")
+	kubeconfig := flag.String("kubeconfig", os.Getenv("KUBECONFIG"), "path to the kubeconfig file to use")
 	flag.Parse()
 	config, err := clientcmd.BuildConfigFromFlags("", *kubeconfig)
 	if err != nil {
